@@ -37,7 +37,7 @@ export default {
           })
       })
     },
-    postUpdate({ commit }, param) {
+    postRouteUpdate({ commit }, param) {
       return new Promise((resolve, reject) => {
         editRoute(param)
           .then(response => {
@@ -48,7 +48,7 @@ export default {
           })
       })
     },
-    postCreate({ commit }, param) {
+    postRouteCreate({ commit }, param) {
       return new Promise((resolve, reject) => {
         createRoute(param)
           .then(response => {

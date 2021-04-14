@@ -113,7 +113,7 @@ export default {
           })
       })
     },
-    postUpdate({ commit }, param) {
+    post${moduleName}Update({ commit }, param) {
       return new Promise((resolve, reject) => {
         edit${moduleName}(param)
           .then(response => {
@@ -124,7 +124,7 @@ export default {
           })
       })
     },
-    postCreate({ commit }, param) {
+    post${moduleName}Create({ commit }, param) {
       return new Promise((resolve, reject) => {
         create${moduleName}(param)
           .then(response => {

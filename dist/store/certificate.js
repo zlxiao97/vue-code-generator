@@ -37,7 +37,7 @@ export default {
           })
       })
     },
-    postUpdate({ commit }, param) {
+    postCertificateUpdate({ commit }, param) {
       return new Promise((resolve, reject) => {
         editCertificate(param)
           .then(response => {
@@ -48,7 +48,7 @@ export default {
           })
       })
     },
-    postCreate({ commit }, param) {
+    postCertificateCreate({ commit }, param) {
       return new Promise((resolve, reject) => {
         createCertificate(param)
           .then(response => {

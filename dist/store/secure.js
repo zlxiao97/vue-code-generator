@@ -37,7 +37,7 @@ export default {
           })
       })
     },
-    postUpdate({ commit }, param) {
+    postSecureUpdate({ commit }, param) {
       return new Promise((resolve, reject) => {
         editSecure(param)
           .then(response => {
@@ -48,7 +48,7 @@ export default {
           })
       })
     },
-    postCreate({ commit }, param) {
+    postSecureCreate({ commit }, param) {
       return new Promise((resolve, reject) => {
         createSecure(param)
           .then(response => {

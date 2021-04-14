@@ -37,7 +37,7 @@ export default {
           })
       })
     },
-    postUpdate({ commit }, param) {
+    postThemUpdate({ commit }, param) {
       return new Promise((resolve, reject) => {
         editThem(param)
           .then(response => {
@@ -48,7 +48,7 @@ export default {
           })
       })
     },
-    postCreate({ commit }, param) {
+    postThemCreate({ commit }, param) {
       return new Promise((resolve, reject) => {
         createThem(param)
           .then(response => {

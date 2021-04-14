@@ -37,7 +37,7 @@ export default {
           })
       })
     },
-    postUpdate({ commit }, param) {
+    postNsipUpdate({ commit }, param) {
       return new Promise((resolve, reject) => {
         editNsip(param)
           .then(response => {
@@ -48,7 +48,7 @@ export default {
           })
       })
     },
-    postCreate({ commit }, param) {
+    postNsipCreate({ commit }, param) {
       return new Promise((resolve, reject) => {
         createNsip(param)
           .then(response => {

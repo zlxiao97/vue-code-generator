@@ -37,7 +37,7 @@ export default {
           })
       })
     },
-    postUpdate({ commit }, param) {
+    postAuthUpdate({ commit }, param) {
       return new Promise((resolve, reject) => {
         editAuth(param)
           .then(response => {
@@ -48,7 +48,7 @@ export default {
           })
       })
     },
-    postCreate({ commit }, param) {
+    postAuthCreate({ commit }, param) {
       return new Promise((resolve, reject) => {
         createAuth(param)
           .then(response => {

@@ -37,7 +37,7 @@ export default {
           })
       })
     },
-    postUpdate({ commit }, param) {
+    postSystemUpdate({ commit }, param) {
       return new Promise((resolve, reject) => {
         editSystem(param)
           .then(response => {
@@ -48,7 +48,7 @@ export default {
           })
       })
     },
-    postCreate({ commit }, param) {
+    postSystemCreate({ commit }, param) {
       return new Promise((resolve, reject) => {
         createSystem(param)
           .then(response => {
