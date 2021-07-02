@@ -111,7 +111,7 @@ const allModules = route.children;
 const getFileContent = (name) => {
   const moduleName = String(name.split("")[0]).toUpperCase() + name.slice(1);
   return `<template>
-  <div class="form-container">
+  <page-header-wrapper content="" :breadcrumb="false">
     <a-card class="card" title="" :bordered="false">
       <!-- 这是一个高级表单组件 -->
       <dc-advanced-form
@@ -121,13 +121,13 @@ const getFileContent = (name) => {
         :options="options"
         :refillValues="refillValues"
         @submit="onSubmit"
-        @cancle="onCancle"
+        @cancel="onCancel"
         @formItemValueChange="onFormItemValueChange"
       />
     </a-card>
     <!-- 以下内容是必要的 -->
     <portal-target name="advancedForm" />
-  </div>
+  </page-header-wrapper>
 </template>
 
 <script>
@@ -166,7 +166,7 @@ export default {
     onFormItemValueChange(payload) {
       console.log('onFormItemValueChange', payload)
     },
-    onCancle() {
+    onCancel() {
       this.$router.back()
     }
   },
@@ -177,10 +177,6 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.form-container /deep/ .ant-form-item {
-  margin-left: 10%;
-  width: 30%;
-}
 </style>
 `;
 };
@@ -195,11 +191,11 @@ const getFields = (name) => {
       rules: [
         {
           required: true,
-          message: `请输入${key}`,
-        },
+          message: `请输入${key}`
+        }
       ],
-      placeholder: "",
-      dcColSpan: 3,
+      placeholder: "请输入",
+      dcColSpan: 3
     }))
   )
     .split("")
@@ -226,22 +222,22 @@ const getFields = (name) => {
 };
 
 allModules.forEach(({ name, meta: { parentName } }) => {
-  if (name.split("_").slice(-1).join("") === "edit") {
-    const content = getFileContent(parentName);
-    const fields = getFields(parentName);
-    fs.mkdirSync(`${__dirname}/dist/editForm/${name}`, { recursive: true });
-    fs.mkdirSync(`${__dirname}/dist/editForm/${name}/config`, {
-      recursive: true,
-    });
-    fs.writeFile(
-      `${__dirname}/dist/editForm/${name}/index.vue`,
-      content,
-      console.error
-    );
-    fs.writeFile(
-      `${__dirname}/dist/editForm/${name}/config/fieldsDef.js`,
-      fields,
-      console.error
-    );
-  }
+  // if (name.split("_").slice(-1).join("") === "edit") {
+  const content = getFileContent(name);
+  const fields = getFields(name);
+  fs.mkdirSync(`${__dirname}/dist/editForm/${name}`, { recursive: true });
+  fs.mkdirSync(`${__dirname}/dist/editForm/${name}/config`, {
+    recursive: true
+  });
+  fs.writeFile(
+    `${__dirname}/dist/editForm/${name}/index.vue`,
+    content,
+    console.error
+  );
+  fs.writeFile(
+    `${__dirname}/dist/editForm/${name}/config/fieldsDef.js`,
+    fields,
+    console.error
+  );
+  // }
 });

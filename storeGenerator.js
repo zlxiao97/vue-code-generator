@@ -74,7 +74,7 @@ const allModules = route.children;
 
 const getFileContent = (name) => {
   const moduleName = String(name.split("")[0]).toUpperCase() + name.slice(1);
-  return `import { fetch${moduleName}List, fetch${moduleName}Detail, edit${moduleName}, create${moduleName} } from '@/api/vpx/${name}'
+  return `import { fetch${moduleName}List, fetch${moduleName}Detail, edit${moduleName}, create${moduleName} } from '@/api/${name}'
 export default {
   state: {
     ${name}List: [],
