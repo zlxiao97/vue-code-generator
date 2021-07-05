@@ -181,7 +181,6 @@ const getColumns = (name) => {
   const elements = String(
     JSON.stringify(
       Object.keys(item).map((key) => ({
-        type: "TextInput",
         title: key,
         dataIndex: key
       }))

@@ -8,11 +8,11 @@ module.exports = {
   redirect: "/third/registry",
   children: [
     {
-      path: "/info",
-      name: "info",
+      path: "/application",
+      name: "application",
       component: RouteView,
-      redirect: "/info/info-list",
-      meta: { title: "用户信息管理", icon: "info" },
-    },
+      redirect: "/application/application-list",
+      meta: { title: "应用管理", icon: "appstore" }
+    }
   ]
 };

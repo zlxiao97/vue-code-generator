@@ -1,24 +1,32 @@
 module.exports = {
-  info: {
+  application: {
     list: new Array(20).fill({
-      userName: "10.0.2.2_LDAP",
-      userEmail: "LDAP",
-      deptId: "10.0.2.2:636",
-      positionName: true,
-      dataResource: true
+      index: "10.0.2.2_LDAP",
+      cnName: "LDAP",
+      enNane: "10.0.2.2:636",
+      version: true,
+      show: true,
+      status: true,
+      updatetime: true
     }),
     detail: {
-      authorizeDay: 0,
-      cellPhone: "",
-      deptId: "",
-      deptName: "",
-      expireTime: "",
-      oa: 0,
-      password: "",
-      positionCode: "",
-      positionName: "",
-      userEmail: "",
-      userName: ""
+      cnName: "LDAP",
+      enNane: "10.0.2.2:636",
+      cnDesc: "",
+      enDesc: "",
+      short: "",
+      app: [],
+      helps: [],
+      name: "",
+      version: true,
+      env: "",
+      dev: "",
+      icon: "",
+      isWeb: true,
+      photo: "",
+      gwtkDesc: "",
+      isAddVersion: true,
+      newDesc: ""
     }
   }
 };
